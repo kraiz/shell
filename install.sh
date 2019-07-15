@@ -214,7 +214,7 @@ git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global core.excludesfile ~/.gitignore
 
 touch ~/.gitignore
-gitignores=( '.DS_Store' )
-for ignore in "${gitignores[@]}" do
+for ignore in ( '.DS_Store' )
+do
   grep -q $ignore ~/.gitignore || echo $ignore >> ~/.gitignore
 done
