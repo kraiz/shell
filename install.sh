@@ -54,7 +54,7 @@ export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export PATH="~/.local/bin:~/.npm-packages/bin:$PATH"
 export LS_COLORS=$LS_COLORS:'di=0;36:'
-export LSCOLORS=Exfxcxdxbxegedabagacad
+export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # tools
 alias v='vim'
