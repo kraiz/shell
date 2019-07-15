@@ -84,7 +84,7 @@ alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master
 EOF
 
 # tmux
-cat <<-"EOF" > ~/.tmux
+cat <<-"EOF" > ~/.tmux.conf
 # basic settings
 set -g history-limit 50000
 set -g default-terminal "screen-256color"
