@@ -76,6 +76,9 @@ alias gc!='git commit -v --amend'
 alias gl='git pull'
 alias glr='git pull --rebase'
 alias gp='git push'
+
+# update shell
+alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master/install | sh"
 EOF
 
 # tmux
