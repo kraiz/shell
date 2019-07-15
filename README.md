@@ -2,4 +2,4 @@
 
 install:
 
-        curl -L https://raw.githubusercontent.com/kraiz/shell/master/install | sh
+        curl -L https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh

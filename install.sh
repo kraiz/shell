@@ -78,7 +78,7 @@ alias glr='git pull --rebase'
 alias gp='git push'
 
 # update shell
-alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master/install | sh"
+alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
 EOF
 
 # tmux
@@ -194,7 +194,6 @@ nnoremap <leader>vs :source $MYVIMRC<cr>
 nmap <silent> ,/ :nohlsearch<CR>
 cmap w!! w !sudo tee % >/dev/null
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-map <leader>f mzgg=G`z
 nnorema <leader>lu :set ff=unix<CR>
 EOF
 
