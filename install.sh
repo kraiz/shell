@@ -45,6 +45,7 @@ zplugin ice silent wait:1; zplugin $load supercrabtree/k
 zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
 
+zstyle :prompt:pure:path color cyan
 
 
 # basics
@@ -53,6 +54,7 @@ export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
 export PATH="~/.local/bin:~/.npm-packages/bin:$PATH"
 export LS_COLORS=$LS_COLORS:'di=0;36:'
+export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # tools
 alias v='vim'
@@ -214,5 +216,5 @@ git config --global core.excludesfile ~/.gitignore
 touch ~/.gitignore
 gitignores=( '.DS_Store' )
 for ignore in "${gitignores[@]}" do
-  grep -q "$ignore" ~/.gitignore || echo "$ignore" >> ~/.gitignore
+  grep -q $ignore ~/.gitignore || echo $ignore >> ~/.gitignore
 done
