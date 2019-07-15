@@ -204,8 +204,15 @@ fi
 
 # git
 git config --global core.eol lf
-git config --global core.editor "vim"
+git config --global core.editor "code"
 git config --global push.default "tracking"
 git config --global color.ui auto
 git config --global diff.tool "vscode"
 git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
+git config --global core.excludesfile ~/.gitignore
+
+touch ~/.gitignore
+gitignores=( '.DS_Store' )
+for ignore in "${gitignores[@]}" do
+  grep -q "$ignore" ~/.gitignore || echo "$ignore" >> ~/.gitignore
+done
