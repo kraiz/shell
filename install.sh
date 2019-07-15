@@ -144,7 +144,7 @@ setw -g window-status-separator ""
 EOF
 
 # vim
-cat <<-"EOF" > ~/.tmux
+cat <<-"EOF" > ~/.vimrc
 set nocompatible
 syntax on
 
