@@ -7,7 +7,7 @@ if ! [ -x "$(command -v git)" ] || ! [ -x "$(command -v curl)" ]; then
 fi
 
 # zsh with zplugin
-cat << EOF > ~/.zshrc
+cat <<-"EOF" > ~/.zshrc
 #! zsh
 
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
@@ -82,7 +82,7 @@ alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master
 EOF
 
 # tmux
-cat << EOF > ~/.tmux
+cat <<-"EOF" > ~/.tmux
 # basic settings
 set -g history-limit 50000
 set -g default-terminal "screen-256color"
@@ -142,7 +142,7 @@ setw -g window-status-separator ""
 EOF
 
 # vim
-cat << EOF > ~/.tmux
+cat <<-"EOF" > ~/.tmux
 set nocompatible
 syntax on
 
