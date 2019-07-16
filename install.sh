@@ -80,7 +80,7 @@ alias glr='git pull --rebase'
 alias gp='git push'
 
 # update shell
-alias update-shell="curl -L https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
+alias update-shell="curl -sL https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
 EOF
 
 # tmux
@@ -144,6 +144,7 @@ setw -g window-status-separator ""
 EOF
 
 # vim
+touch ~/.vimrc
 cat <<-"EOF" > ~/.vimrc
 set nocompatible
 syntax on
