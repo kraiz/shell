@@ -10,6 +10,41 @@ fi
 cat <<-"EOF" > ~/.zshrc
 #! zsh
 
+# basics
+export EDITOR='vim'
+export LC_ALL='en_US.UTF-8'
+export LANG='en_US.UTF-8'
+export PATH="~/.local/bin:~/.npm-packages/bin:$PATH"
+export LS_COLORS=$LS_COLORS:'di=0;36:'
+export LSCOLORS=gxfxcxdxbxegedabagacad
+
+# tools
+alias v='vim'
+alias d='docker'
+alias dc='docker-compose'
+alias tm='tmux -2 attach || tmux -2 new'
+alias l='tree --dirsfirst -ChFupDaLg 1 $argv'
+
+# network and processes
+alias psg='ps aux | grep -v grep | grep -i'
+alias nsl='netstat -taupn | grep LISTEN'
+alias nsg='netstat -taupn | grep -i'
+
+# git
+alias g='git'
+alias ga='git add'
+alias gs='git status --short'
+alias gst='git status'
+alias gc='git commit -v'
+alias gc!='git commit -v --amend'
+alias gl='git pull'
+alias glr='git pull --rebase'
+alias gp='git push'
+
+# update shell
+alias update-shell="curl -sL https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
+
+# plugin stuff
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
 
 typeset -A ZPLGM
@@ -46,41 +81,6 @@ zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
 
 zstyle :prompt:pure:path color cyan
-
-
-# basics
-export EDITOR='vim'
-export LC_ALL='en_US.UTF-8'
-export LANG='en_US.UTF-8'
-export PATH="~/.local/bin:~/.npm-packages/bin:$PATH"
-export LS_COLORS=$LS_COLORS:'di=0;36:'
-export LSCOLORS=gxfxcxdxbxegedabagacad
-
-# tools
-alias v='vim'
-alias d='docker'
-alias dc='docker-compose'
-alias tm='tmux -2 attach || tmux -2 new'
-alias l='tree --dirsfirst -ChFupDaLg 1 $argv'
-
-# network and processes
-alias psg='ps aux | grep -v grep | grep -i'
-alias nsl='netstat -taupn | grep LISTEN'
-alias nsg='netstat -taupn | grep -i'
-
-# git
-alias g='git'
-alias ga='git add'
-alias gs='git status --short'
-alias gst='git status'
-alias gc='git commit -v'
-alias gc!='git commit -v --amend'
-alias gl='git pull'
-alias glr='git pull --rebase'
-alias gp='git push'
-
-# update shell
-alias update-shell="curl -sL https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
 EOF
 
 # tmux
