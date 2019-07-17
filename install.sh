@@ -42,7 +42,7 @@ alias glr='git pull --rebase'
 alias gp='git push'
 
 # update shell
-alias update-shell="curl -sL https://raw.githubusercontent.com/kraiz/shell/master/install.sh | sh"
+alias update-shell="curl -sL https://raw.githubusercontent.com/kraiz/shell/master/install.sh | zsh"
 
 # plugin stuff
 export XDG_CACHE_HOME=${XDG_CACHE_HOME:=~/.cache}
