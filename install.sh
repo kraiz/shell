@@ -201,7 +201,7 @@ nnorema <leader>lu :set ff=unix<CR>
 EOF
 
 # npm
-if ! [ -x "$(command -v npm)" ]; then
+if [ -x "$(command -v npm)" ]; then
   npm config prefix ~/.npm-packages
 fi
 
