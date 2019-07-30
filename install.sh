@@ -82,11 +82,11 @@ zplugin $load zdharma/fast-syntax-highlighting
 
 # Install `fzy` fuzzy finder, if not yet present in the system
 # Also install helper scripts for tmux and dwtm
-zplugin ice silent wait:1; as"command" if'[[ -z "$commands[fzy]" ]]' \
+zplugin ice silent wait:1 as"command" if'[[ -z "$commands[fzy]" ]]' \
        make"!PREFIX=$ZPFX install" atclone"cp contrib/fzy-* $ZPFX/bin/" pick"$ZPFX/bin/fzy*"
-    zload jhawthorn/fzy
+    $load jhawthorn/fzy
 # Install fzy-using widgets
-zplugin ice silent wait:1; $load aperezdc/zsh-fzy
+zplugin ice silent wait:1; zplugin $load aperezdc/zsh-fzy
 bindkey '\ec' fzy-cd-widget
 bindkey '^T'  fzy-file-widget
 bindkey '^R'  fzy-history-widget
