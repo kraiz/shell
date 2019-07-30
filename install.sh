@@ -205,7 +205,7 @@ EOF
 
 # npm
 if [ -x "$(command -v npm)" ]; then
-  npm config prefix ~/.npm-packages
+  npm config set prefix ~/.npm-packages
 fi
 
 # git
