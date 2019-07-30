@@ -80,6 +80,9 @@ zplugin ice silent wait:1; zplugin $load supercrabtree/k
 zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
 
+zcommand from"gh-r";         zload junegunn/fzf-bin
+zcommand pick"bin/fzf-tmux"; zload junegunn/fzf
+
 zstyle :prompt:pure:path color cyan
 EOF
 
