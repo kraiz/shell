@@ -80,9 +80,19 @@ zplugin ice silent wait:1; zplugin $load supercrabtree/k
 zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
 
-zcommand from"gh-r";         zload junegunn/fzf-bin
-zcommand pick"bin/fzf-tmux"; zload junegunn/fzf
+# Install `fzy` fuzzy finder, if not yet present in the system
+# Also install helper scripts for tmux and dwtm
+turbo0 as"command" if'[[ -z "$commands[fzy]" ]]' \
+       make"!PREFIX=$ZPFX install" atclone"cp contrib/fzy-* $ZPFX/bin/" pick"$ZPFX/bin/fzy*"
+    zload jhawthorn/fzy
+# Install fzy-using widgets
+turbo0 silent; zload aperezdc/zsh-fzy
+bindkey '\ec' fzy-cd-widget
+bindkey '^T'  fzy-file-widget
+bindkey '^R'  fzy-history-widget
+bindkey '^P'  fzy-proc-widget
 
+zstyle :fzy:tmux    enabled      no
 zstyle :prompt:pure:path color cyan
 EOF
 
