@@ -76,9 +76,22 @@ zplugin ice blockf; zplugin $load zsh-users/zsh-completions
 zplugin ice silent wait:1; zplugin $load mollifier/cd-gitroot
 zplugin ice silent wait:1; zplugin $load micha/resty
 zplugin ice silent wait:1; zplugin $load supercrabtree/k
+alias l='k -h'
 
 zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
+
+# Print command exit code as a human-readable string
+zload bric3/nice-exit-code
+export RPS1='%B%F{red}$(nice_exit_code)%f%b'
+
+# Add execution time to right prompt
+zload sindresorhus/pretty-time-zsh
+zload popstas/zsh-command-time
+export ZSH_COMMAND_TIME_MIN_SECONDS=1
+export ZSH_COMMAND_TIME_MSG=''
+export RPS1=${RPS1}' %B%F{green}$([[ -n ${ZSH_COMMAND_TIME} ]] && pretty-time ${ZSH_COMMAND_TIME})%f%b'
+
 
 # Install `fzy` fuzzy finder, if not yet present in the system
 # Also install helper scripts for tmux and dwtm
@@ -92,8 +105,8 @@ bindkey '^T'  fzy-file-widget
 bindkey '^R'  fzy-history-widget
 bindkey '^P'  fzy-proc-widget
 
-zstyle :fzy:tmux    enabled      no
-zstyle :prompt:pure:path color cyan
+zstyle :fzy:tmux           enabled      yes
+zstyle :prompt:pure:path   color        cyan
 EOF
 
 # tmux
