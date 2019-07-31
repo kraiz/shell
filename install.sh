@@ -82,12 +82,12 @@ zplugin ice silent wait!1 atload"ZPLGM[COMPINIT_OPTS]=-C; zpcompinit"
 zplugin $load zdharma/fast-syntax-highlighting
 
 # Print command exit code as a human-readable string
-zload bric3/nice-exit-code
+zplugin $load bric3/nice-exit-code
 export RPS1='%B%F{red}$(nice_exit_code)%f%b'
 
 # Add execution time to right prompt
-zload sindresorhus/pretty-time-zsh
-zload popstas/zsh-command-time
+zplugin $load sindresorhus/pretty-time-zsh
+zplugin $load popstas/zsh-command-time
 export ZSH_COMMAND_TIME_MIN_SECONDS=1
 export ZSH_COMMAND_TIME_MSG=''
 export RPS1=${RPS1}' %B%F{green}$([[ -n ${ZSH_COMMAND_TIME} ]] && pretty-time ${ZSH_COMMAND_TIME})%f%b'
