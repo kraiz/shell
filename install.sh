@@ -14,7 +14,7 @@ cat <<-"EOF" > ~/.zshrc
 export EDITOR='vim'
 export LC_ALL='en_US.UTF-8'
 export LANG='en_US.UTF-8'
-export PATH="${HOME}/.local/bin:${HOME}/.npm-packages/bin:$PATH"
+export PATH="$HOME/.local/bin:$HOME/.npm-packages/bin:$PATH"
 export LS_COLORS=$LS_COLORS:'di=0;36:'
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
