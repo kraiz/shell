@@ -250,6 +250,7 @@ git config --global color.ui auto
 git config --global diff.tool "vscode"
 git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
 git config --global core.excludesfile ~/.gitignore
+git config --global core.ignorecase false
 
 touch ~/.gitignore
 declare -a ignores=('.DS_Store')
