@@ -244,7 +244,7 @@ fi
 
 # git
 git config --global core.eol lf
-git config --global core.editor "code"
+git config --global core.editor "vim"
 git config --global push.default "tracking"
 git config --global color.ui auto
 git config --global diff.tool "vscode"
