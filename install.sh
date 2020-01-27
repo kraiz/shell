@@ -118,6 +118,11 @@ bindkey '^P'  fzy-proc-widget
 
 zstyle :fzy:tmux           enabled      yes
 zstyle :prompt:pure:path   color        cyan
+
+# Load completions
+autoload -U +X bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d/*
+
 EOF
 
 # tmux
